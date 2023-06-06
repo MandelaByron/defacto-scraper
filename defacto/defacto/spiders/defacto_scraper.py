@@ -126,7 +126,7 @@ class DefactoScraperSpider(scrapy.Spider):
             size_name=size['Size']
             qty=size['StockQuantity']
             items['size'] = size_name
-            product_code = str(code) + '-' + str(color) + '-' + str(size_name)
+            product_code = str(code) + ','  + str(size_name) + ',' + str(color)
             items['product_code'] = product_code
             items['group_code'] = str(code)
             items['qty'] = qty            
