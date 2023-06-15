@@ -93,7 +93,7 @@ class UpdateSpider(scrapy.Spider):
             size_name=size['Size']
             qty=size['StockQuantity']
            
-            product_code = str(code) + '-' + str(color) + '-' + str(size_name)
+            product_code = str(code) + ','  + str(size_name) + ',' + str(color)
             items['product_code'] = product_code
            
             items['qty'] = qty            

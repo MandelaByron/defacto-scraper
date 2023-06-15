@@ -4,7 +4,7 @@ from inline_requests import inline_requests
 from ..items import DefactoItem
 from urllib.parse import urlencode
 
-API_KEY='ff3cc8159137f06335075d726050e683'
+API_KEY=''
 
 def get_scraperapi_url(url):
     payload = {'api_key': API_KEY, 'url': url }
@@ -126,7 +126,7 @@ class DefactoScraperSpider(scrapy.Spider):
             size_name=size['Size']
             qty=size['StockQuantity']
             items['size'] = size_name
-            product_code = str(code) + '-' + str(color) + '-' + str(size_name)
+            product_code = str(code) + ','  + str(size_name) + ',' + str(color)
             items['product_code'] = product_code
             items['group_code'] = str(code)
             items['qty'] = qty            
